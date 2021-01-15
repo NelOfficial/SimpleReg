@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-require ('connect.php');
+require_once ('connect.php');
 
 if (isset($_POST['username']) && isset($_POST['username'])){
     $username = $_POST['username'];
