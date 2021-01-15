@@ -7,19 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
 
 
 <div class="container">
     <form class="form-signin" METHOD="post">
-        <h2 class="Log_text">Вход</h2>
+        <h2 class="Log_text">Login</h2>
 
-        <input type="text" name="username" class="form-control" placeholder="Ваше имя" required><br>
-        <input type="password" name="password" class="form-control" placeholder="Ваш пароль" required><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
-        <a href="/index.php" class="btn btn-lg btn-primary btn-block">Нет аккаунта? Создайте!</a>
+        <input type="text" name="username" class="form-control" placeholder="Your name" required><br>
+        <input type="password" name="password" class="form-control" placeholder="Your password" required><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <a href="/index.php" class="btn btn-lg btn-primary btn-block">Haven't account? Create!</a>
     </form>
 </div>
 <?php
@@ -36,7 +36,7 @@ if (isset($_POST['username']) and isset($_POST['username'])){
     if ($count == 1) {
         $_SESSION['username'] = $username;
     }else{
-        $fmsg = "Ошибка :(. Проверьте правильность написания логина и пароля.";
+        $fmsg = "Error!. Check that the user name and password are spelled correctly.";
     }
 }
 $smsg  = "Авторизация прошла успешно :)";
@@ -44,9 +44,9 @@ $fsmsg = "Ошибка :(";
 
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
-    echo "<h2>Добро пожаловать, " . $username . "! ";
-    echo "<p>Вы вошли в аккаунт!</p>";
-    echo "<a href='logout.php' class='btn btn-lg btn-primary btn-block' style='width: 94px;'> Выйти </a>";
+    echo "<h2>Hello, " . $username . "! ";
+    echo "<p>You are logged in!</p>";
+    echo "<a href='logout.php' class='btn btn-lg btn-primary btn-block' style='width: 94px;'> Log out </a>";
 }
 
 ?>
